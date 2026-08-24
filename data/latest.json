@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-24T17:44:27+00:00",
+  "generated_utc": "2026-08-24T18:05:00+00:00",
   "manual": {
     "cleans": {
       "A": {
@@ -39,7 +39,7 @@
       "history": [],
       "last": null
     },
-    "generated_utc": "2026-08-24T17:44:29.845Z",
+    "generated_utc": "2026-08-24T18:05:01.832Z",
     "health": {
       "a_morbidities_total": 0,
       "a_mortalities_total": 0,
@@ -60,11 +60,11 @@
         "induction_date": null
       }
     },
-    "synced_local": "25 Aug 2026, 03:44 AEST",
-    "synced_utc": "2026-08-24T17:44:30+00:00"
+    "synced_local": "25 Aug 2026, 04:05 AEST",
+    "synced_utc": "2026-08-24T18:05:09+00:00"
   },
-  "reading_epoch": 1787593429,
-  "reading_local": "25 Aug 2026, 03:43 AEST",
+  "reading_epoch": 1787594690,
+  "reading_local": "25 Aug 2026, 04:04 AEST",
   "source": "Ecowitt WN1980C-WIFI7750 via Ecowitt API v3",
   "streams": {
     "cameras": "awaiting",
@@ -88,7 +88,7 @@
     "console_battery_v": 2.91,
     "dew_point_c": 12.2,
     "feels_like_c": 12.8,
-    "indoor_humidity_pct": 78.0,
+    "indoor_humidity_pct": 79.0,
     "indoor_temp_c": 14.3,
     "outdoor_humidity_pct": 96.0,
     "outdoor_temp_c": 12.8,
