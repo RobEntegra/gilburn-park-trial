@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-25T06:31:34+00:00",
+  "generated_utc": "2026-08-25T07:28:50+00:00",
   "manual": {
     "cleans": {
       "A": {
@@ -39,7 +39,7 @@
       "history": [],
       "last": null
     },
-    "generated_utc": "2026-08-25T06:31:36.350Z",
+    "generated_utc": "2026-08-25T07:28:53.103Z",
     "health": {
       "a_morbidities_total": 0,
       "a_mortalities_total": 0,
@@ -60,11 +60,11 @@
         "induction_date": null
       }
     },
-    "synced_local": "25 Aug 2026, 16:31 AEST",
-    "synced_utc": "2026-08-25T06:31:36+00:00"
+    "synced_local": "25 Aug 2026, 17:28 AEST",
+    "synced_utc": "2026-08-25T07:28:53+00:00"
   },
-  "reading_epoch": 1787639487,
-  "reading_local": "25 Aug 2026, 16:31 AEST",
+  "reading_epoch": 1787642910,
+  "reading_local": "25 Aug 2026, 17:28 AEST",
   "source": "Ecowitt WN1980C-WIFI7750 via Ecowitt API v3",
   "streams": {
     "cameras": "awaiting",
@@ -80,27 +80,27 @@
   "thi": {
     "label": "Normal",
     "level": "normal",
-    "value": 60.8
+    "value": 59.9
   },
   "units": "metric",
   "weather": {
-    "apparent_temp_c": 17.1,
-    "console_battery_v": 2.93,
-    "dew_point_c": 13.8,
-    "feels_like_c": 16.1,
-    "indoor_humidity_pct": 72.0,
-    "indoor_temp_c": 18.7,
-    "outdoor_humidity_pct": 86.0,
-    "outdoor_temp_c": 16.1,
-    "pressure_hpa": 1004.4,
+    "apparent_temp_c": 16.0,
+    "console_battery_v": 2.9,
+    "dew_point_c": 13.4,
+    "feels_like_c": 15.6,
+    "indoor_humidity_pct": 75.0,
+    "indoor_temp_c": 17.6,
+    "outdoor_humidity_pct": 87.0,
+    "outdoor_temp_c": 15.6,
+    "pressure_hpa": 1005.4,
     "rain_rate_mmhr": 0.0,
     "rain_today_mm": 2.0,
     "rain_week_mm": 7.1,
     "solar_wm2": null,
-    "vpd_kpa": 0.26,
-    "wind_direction_deg": 117,
-    "wind_direction_pt": "ESE",
+    "vpd_kpa": 0.23,
+    "wind_direction_deg": 98,
+    "wind_direction_pt": "E",
     "wind_gust_kmh": 5.5,
-    "wind_speed_kmh": 1.1
+    "wind_speed_kmh": 3.5
   }
 }
