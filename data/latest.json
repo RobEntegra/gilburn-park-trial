@@ -1,7 +1,70 @@
 {
-  "generated_utc": "2026-08-26T14:04:25+00:00",
-  "reading_epoch": 1787753051,
-  "reading_local": "27 Aug 2026, 00:04 AEST",
+  "generated_utc": "2026-08-26T15:01:58+00:00",
+  "manual": {
+    "cleans": {
+      "A": {
+        "count": 0,
+        "history": [],
+        "last": null,
+        "mean_days_between": null,
+        "total_labour_minutes": 0
+      },
+      "B": {
+        "count": 0,
+        "history": [],
+        "last": null,
+        "mean_days_between": null,
+        "total_labour_minutes": 0
+      }
+    },
+    "deviations": {
+      "count": 0,
+      "entries": [],
+      "total_downtime_hours": 0,
+      "unresolved": 0
+    },
+    "entry_count": {
+      "cleans": 0,
+      "daily": 0,
+      "deviations": 0,
+      "mob": 0
+    },
+    "feed": {
+      "history": [],
+      "last": null,
+      "total_a_kg": 0,
+      "total_b_kg": 0
+    },
+    "field_water": {
+      "history": [],
+      "last": null
+    },
+    "generated_utc": "2026-08-26T15:02:02.077Z",
+    "health": {
+      "a_morbidities_total": 0,
+      "a_mortalities_total": 0,
+      "b_morbidities_total": 0,
+      "b_mortalities_total": 0,
+      "history": []
+    },
+    "latest_entry": null,
+    "mob": {
+      "A": {
+        "avg_induction_weight_kg": null,
+        "head_count": null,
+        "induction_date": null
+      },
+      "B": {
+        "avg_induction_weight_kg": null,
+        "head_count": null,
+        "induction_date": null
+      }
+    },
+    "synced_local": "27 Aug 2026, 01:02 AEST",
+    "synced_utc": "2026-08-26T15:02:02+00:00"
+  },
+  "reading_epoch": 1787756473,
+  "reading_local": "27 Aug 2026, 01:01 AEST",
   "source": "Ecowitt WN1980C-WIFI7750 via Ecowitt API v3",
   "streams": {
     "cameras": "awaiting",
@@ -17,19 +80,19 @@
   "thi": {
     "label": "Normal",
     "level": "normal",
-    "value": 43.6
+    "value": 42.9
   },
   "units": "metric",
   "weather": {
-    "apparent_temp_c": 5.0,
-    "console_battery_v": 2.95,
-    "dew_point_c": 5.1,
-    "feels_like_c": 6.1,
-    "indoor_humidity_pct": 74.0,
-    "indoor_temp_c": 8.0,
+    "apparent_temp_c": 4.5,
+    "console_battery_v": 2.93,
+    "dew_point_c": 4.7,
+    "feels_like_c": 5.7,
+    "indoor_humidity_pct": 75.0,
+    "indoor_temp_c": 7.5,
     "outdoor_humidity_pct": 93.0,
-    "outdoor_temp_c": 6.1,
-    "pressure_hpa": 1019.3,
+    "outdoor_temp_c": 5.7,
+    "pressure_hpa": 1019.6,
     "rain_rate_mmhr": 0.0,
     "rain_today_mm": 0.0,
     "rain_week_mm": 7.4,
