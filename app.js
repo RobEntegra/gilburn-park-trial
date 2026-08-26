@@ -341,7 +341,13 @@ function staleness(d) {
 
 fetch("data/latest.json", { cache: "no-store" })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(d => { const flags = renderWeather(d); renderStreams(flags, d.manual); staleness(d); })
+  .then(d => {
+    const flags = renderWeather(d);
+    renderStreams(flags, d.manual);
+    staleness(d);
+    const mins = d.reading_epoch ? (Date.now() / 1000 - d.reading_epoch) / 60 : Infinity;
+    setDoovitStatus(mins <= 45);
+  })
   .catch(() => {
     const box = $("stale");
     box.className = "stale show err";
@@ -350,6 +356,7 @@ fetch("data/latest.json", { cache: "no-store" })
       "but no current readings are available.";
     set("readingTime", "Reading unavailable");
     renderStreams(null, null);
+    setDoovitStatus(false);
   });
 
 renderCams();
@@ -398,3 +405,42 @@ function renderPartners() {
 
 renderPartnerBar();
 renderPartners();
+
+/* ---- Site map + Doovit connectivity status.
+   Fixed physical location (Gilburn Park, Kerang VIC), so the marker is static.
+   "Online"/"Offline" mirrors the same 45 minute freshness window used by staleness()
+   above, since the Doovit controller is what relays the weather reading. */
+const SITE_LAT = -35.7445, SITE_LON = 144.0064;
+
+function initSiteMap() {
+  const el = $("siteMapEl");
+  if (!el || typeof L === "undefined") return;
+  const map = L.map(el, {
+    center: [SITE_LAT, SITE_LON],
+    zoom: 15,
+    zoomControl: false,
+    dragging: false,
+    scrollWheelZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    keyboard: false,
+    touchZoom: false,
+    attributionControl: true
+  });
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+    maxZoom: 18,
+    attribution: "Esri"
+  }).addTo(map);
+  L.circleMarker([SITE_LAT, SITE_LON], {
+    radius: 7, color: "#D9615C", weight: 2, fillColor: "#D9615C", fillOpacity: 0.85
+  }).addTo(map);
+}
+
+function setDoovitStatus(online) {
+  const chip = $("sitemapStatus");
+  if (!chip) return;
+  chip.className = "sitemap-status chip " + (online ? "live" : "off");
+  chip.textContent = online ? "Doovit online" : "Doovit offline";
+}
+
+initSiteMap();

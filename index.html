@@ -7,6 +7,7 @@
 <meta name="description" content="Live public dashboard for the Gilburn Park feedlot trial of the TPS50 Croc Trough Pump. 70 days, 400 head, two paddocks, one variable.">
 <meta property="og:title" content="Gilburn Park Feedlot Trial — Live Dashboard">
 <meta property="og:description" content="70 days. 400 head. Two adjacent paddocks, one difference. Follow the data as it is recorded.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <style>
 *{box-sizing:border-box}
 :root{--bg:#0E1418;--panel:#17212A;--panel2:#1D2932;--panel3:#131C23;--line:#293845;
@@ -30,8 +31,19 @@ header{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding-bottom:20
 .open{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
       color:#A8E6C6;background:#14311F;border:1px solid #2C5C46;padding:4px 9px;border-radius:3px}
 
-.lede{margin-top:22px;font-size:14px;color:#C3D0D9;max-width:78ch}
+.ledewrap{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-top:22px}
+.lede{margin-top:0;font-size:14px;color:#C3D0D9;max-width:78ch;flex:1 1 380px}
 .lede strong{color:var(--ink);font-weight:600}
+
+.sitemap{flex:1 1 220px;max-width:320px;min-width:220px;height:130px;border-radius:8px;
+      overflow:hidden;position:relative;border:1px solid var(--line);background:var(--panel3)}
+.sitemap .leaflet-container{width:100%;height:100%;background:var(--panel3)}
+.sitemap-status{position:absolute;top:8px;left:8px;z-index:1000}
+.sitemap-status.chip.live{color:#A8E6C6;background:rgba(20,49,31,.92);border:1px solid #2C5C46}
+.sitemap-status.chip.off{color:#F0C3C0;background:rgba(45,20,19,.92);border:1px solid #5C302E}
+.sitemap-status.chip.pending{color:var(--muted);background:rgba(19,28,35,.92);border:1px solid var(--line)}
+.sitemap .leaflet-control-attribution{font-size:8.5px;background:rgba(19,28,35,.75);color:var(--dim)}
+.sitemap .leaflet-control-attribution a{color:var(--dim)}
 
 .stale{margin-top:18px;padding:12px 16px;border-radius:6px;font-size:12.5px;display:none}
 .stale.show{display:block}
@@ -160,10 +172,17 @@ footer b{color:var(--muted)}
 
 <div class="pbar" id="pbar" aria-label="Trial partners"></div>
 
-<p class="lede">Two adjacent paddocks of 200 cattle. Same mob, same ration, same batch, same contractor,
-same weather. <strong>One difference: the trough in Paddock B carries a TPS50 Croc Trough Pump.</strong>
-Everything measured over the 70 days appears on this page as it is recorded, including the things
-that go wrong. No selective reporting, and raw data published at the end.</p>
+<div class="ledewrap">
+  <p class="lede">Two adjacent paddocks of 200 cattle. Same mob, same ration, same batch, same contractor,
+  same weather. <strong>One difference: the trough in Paddock B carries a TPS50 Croc Trough Pump.</strong>
+  Everything measured over the 70 days appears on this page as it is recorded, including the things
+  that go wrong. No selective reporting, and raw data published at the end.</p>
+
+  <div class="sitemap" aria-label="Site location">
+    <span class="sitemap-status chip pending" id="sitemapStatus">Doovit &middot;&middot;&middot;</span>
+    <div id="siteMapEl" style="width:100%;height:100%"></div>
+  </div>
+</div>
 
 <div class="stale" id="stale"></div>
 
@@ -236,6 +255,7 @@ delivery to date. Nothing on this page is modelled, estimated or back-filled.</d
   <div class="dbody" id="db"></div>
 </dialog>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="app.js"></script>
 </body>
 </html>
