@@ -436,11 +436,17 @@ function initSiteMap() {
   }).addTo(map);
 }
 
+/* This reflects the freshness of the weather reading (same 45 minute window as
+   staleness() above), not the Doovit controller's own connectivity. Those are
+   different things: the controller can be online while the Ecowitt station's
+   own transmission has stalled, which is exactly what a stale reading here means.
+   There is no feed from Doover's own device status into this dashboard, so this
+   chip deliberately does not claim to know whether Doovit itself is online. */
 function setDoovitStatus(online) {
   const chip = $("sitemapStatus");
   if (!chip) return;
   chip.className = "sitemap-status chip " + (online ? "live" : "off");
-  chip.textContent = online ? "Doovit online" : "Doovit offline";
+  chip.textContent = online ? "Weather feed live" : "Weather feed stale";
 }
 
 initSiteMap();
