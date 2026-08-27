@@ -28,8 +28,10 @@ def fetch(url):
         return json.loads(body)
     except json.JSONDecodeError:
         head = body.strip()[:200].replace("\n", " ")
-        sys.exit("Endpoint did not return JSON. Check the deployment is set to "
-                 '"Who has access: Anyone". First 200 characters:\n' + head)
+        # Never fail the job over this. A weather-only update beats no update.
+        print("Endpoint did not return JSON. Check the deployment is set to "
+              '"Who has access: Anyone". First 200 characters: ' + head)
+        return None
 
 
 def main():
@@ -43,6 +45,9 @@ def main():
     except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
         # A weather-only update is better than no update. Do not fail the whole job.
         print(f"Could not reach the sheet ({e}). Leaving previous manual data in place.")
+        return
+
+    if payload is None:
         return
 
     if not payload.get("ok"):

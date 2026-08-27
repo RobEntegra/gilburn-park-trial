@@ -5,7 +5,7 @@ Credentials come from the environment, never from the repo:
   ECOWITT_APPLICATION_KEY, ECOWITT_API_KEY, ECOWITT_MAC
 Set these as GitHub Actions secrets. They are never written into the output file.
 """
-import json, os, sys, urllib.parse, urllib.request
+import json, os, sys, time, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
 
 API = "https://api.ecowitt.net/api/v3/device/real_time"
@@ -67,11 +67,29 @@ def main():
         "temp_unitid": "1",           # Celsius
     }
     url = API + "?" + urllib.parse.urlencode(params)
-    with urllib.request.urlopen(url, timeout=30) as resp:
-        payload = json.load(resp)
 
-    if payload.get("code") != 0:
-        sys.exit(f"Ecowitt API returned code {payload.get('code')}: {payload.get('msg')}")
+    # Ecowitt drops the odd request. One bad call must not cost the whole update,
+    # so try three times before giving up. A unique nocache value on every attempt
+    # stops any proxy in between handing back an earlier reading.
+    payload, last_error = None, None
+    for attempt in range(1, 4):
+        try:
+            attempt_url = url + "&nocache=" + str(int(time.time()))
+            with urllib.request.urlopen(attempt_url, timeout=30) as resp:
+                payload = json.load(resp)
+            if payload.get("code") != 0:
+                last_error = f"API code {payload.get('code')}: {payload.get('msg')}"
+                payload = None
+        except Exception as e:                      # network, timeout, bad JSON
+            last_error, payload = repr(e), None
+        if payload is not None:
+            break
+        print(f"Ecowitt attempt {attempt} failed: {last_error}")
+        if attempt < 3:
+            time.sleep(5 * attempt)
+
+    if payload is None:
+        sys.exit(f"Ecowitt unreachable after 3 attempts: {last_error}")
 
     d = payload.get("data") or {}
     outdoor  = d.get("outdoor", {})
@@ -137,6 +155,21 @@ def main():
             "cameras":   "awaiting",
         },
     }
+
+    # Keep whatever fetch_manual.py wrote last time. This script owns the weather
+    # fields only. Without this, a weather update that lands while the Sheet is
+    # unreachable would blank the manual logs on the page.
+    try:
+        with open(OUT) as f:
+            prev = json.load(f)
+    except (OSError, ValueError):
+        prev = {}
+    if prev.get("manual"):
+        out["manual"] = prev["manual"]
+    for key in ("feed", "clean", "log", "quality"):
+        prior = (prev.get("streams") or {}).get(key)
+        if prior:
+            out["streams"][key] = prior
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w") as f:
