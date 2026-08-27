@@ -339,7 +339,7 @@ function staleness(d) {
     "update job may have dropped out. The figures below are the last confirmed reading, not the current conditions.";
 }
 
-fetch("data/latest.json", { cache: "no-store" })
+fetch("data/latest.json?t=" + Date.now(), { cache: "no-store" })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(d => {
     const flags = renderWeather(d);
