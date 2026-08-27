@@ -1,4 +1,4 @@
-/* Gilburn Park Feedlot Trial - public dashboard.
+/* Gilburn Park Containment Feeding Trial - public dashboard.
    Reads data/latest.json. No credentials here, nothing to keep running.
    Streams flip from their measurement plan to live figures when the JSON says live. */
 
