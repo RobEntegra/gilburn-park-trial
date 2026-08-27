@@ -1,7 +1,70 @@
 {
-  "generated_utc": "2026-08-27T05:51:01+00:00",
-  "reading_epoch": 1787809817,
-  "reading_local": "27 Aug 2026, 15:50 AEST",
+  "generated_utc": "2026-08-27T17:07:07+00:00",
+  "manual": {
+    "cleans": {
+      "A": {
+        "count": 0,
+        "history": [],
+        "last": null,
+        "mean_days_between": null,
+        "total_labour_minutes": 0
+      },
+      "B": {
+        "count": 0,
+        "history": [],
+        "last": null,
+        "mean_days_between": null,
+        "total_labour_minutes": 0
+      }
+    },
+    "deviations": {
+      "count": 0,
+      "entries": [],
+      "total_downtime_hours": 0,
+      "unresolved": 0
+    },
+    "entry_count": {
+      "cleans": 0,
+      "daily": 0,
+      "deviations": 0,
+      "mob": 0
+    },
+    "feed": {
+      "history": [],
+      "last": null,
+      "total_a_kg": 0,
+      "total_b_kg": 0
+    },
+    "field_water": {
+      "history": [],
+      "last": null
+    },
+    "generated_utc": "2026-08-27T17:07:09.337Z",
+    "health": {
+      "a_morbidities_total": 0,
+      "a_mortalities_total": 0,
+      "b_morbidities_total": 0,
+      "b_mortalities_total": 0,
+      "history": []
+    },
+    "latest_entry": null,
+    "mob": {
+      "A": {
+        "avg_induction_weight_kg": null,
+        "head_count": null,
+        "induction_date": null
+      },
+      "B": {
+        "avg_induction_weight_kg": null,
+        "head_count": null,
+        "induction_date": null
+      }
+    },
+    "synced_local": "28 Aug 2026, 03:07 AEST",
+    "synced_utc": "2026-08-27T17:07:09+00:00"
+  },
+  "reading_epoch": 1787850379,
+  "reading_local": "28 Aug 2026, 03:06 AEST",
   "source": "Ecowitt WN1980C-WIFI7750 via Ecowitt API v3",
   "streams": {
     "cameras": "awaiting",
@@ -17,27 +80,27 @@
   "thi": {
     "label": "Normal",
     "level": "normal",
-    "value": 61.4
+    "value": 47.8
   },
   "units": "metric",
   "weather": {
-    "apparent_temp_c": 15.2,
-    "console_battery_v": 2.94,
-    "dew_point_c": 7.6,
-    "feels_like_c": 17.0,
-    "indoor_humidity_pct": 46.0,
-    "indoor_temp_c": 20.3,
-    "outdoor_humidity_pct": 54.0,
-    "outdoor_temp_c": 17.0,
-    "pressure_hpa": 1018.3,
+    "apparent_temp_c": 7.6,
+    "console_battery_v": 2.93,
+    "dew_point_c": 6.7,
+    "feels_like_c": 8.4,
+    "indoor_humidity_pct": 74.0,
+    "indoor_temp_c": 9.7,
+    "outdoor_humidity_pct": 89.0,
+    "outdoor_temp_c": 8.4,
+    "pressure_hpa": 1019.0,
     "rain_rate_mmhr": 0.0,
     "rain_today_mm": 0.0,
     "rain_week_mm": 7.4,
     "solar_wm2": null,
-    "vpd_kpa": 0.89,
-    "wind_direction_deg": 298,
+    "vpd_kpa": 0.12,
+    "wind_direction_deg": 288,
     "wind_direction_pt": "WNW",
-    "wind_gust_kmh": 7.2,
-    "wind_speed_kmh": 6.4
+    "wind_gust_kmh": 0.0,
+    "wind_speed_kmh": 0.0
   }
 }
