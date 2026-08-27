@@ -1,22 +1,33 @@
 name: Update trial data
 
+# Why this looks the way it does:
+#
+# GitHub does not guarantee scheduled runs. It delays them under load and drops
+# them outright when the queue is busy, which is why a "*/15" cron was landing
+# every 20 to 90 minutes, and sometimes not for hours. The schedule is therefore
+# no longer the only thing keeping the page fresh: each run stays alive and
+# republishes three times before it finishes. A missed trigger now costs
+# minutes, not hours.
+#
+# Runs are also off the top of the hour, which is the busiest and most-dropped
+# slot on GitHub's scheduler.
+
 on:
   schedule:
-    # Every 15 minutes. GitHub may delay scheduled runs when the queue is busy,
-    # so treat this as "about every 15 minutes" rather than exact.
-    - cron: "*/15 * * * *"
-  workflow_dispatch:        # lets you trigger a run by hand from the Actions tab
+    - cron: "4,19,34,49 * * * *"
+  workflow_dispatch:          # Actions tab, "Run workflow", for an update on demand
 
 permissions:
   contents: write
 
 concurrency:
   group: update-data
-  cancel-in-progress: false
+  cancel-in-progress: true    # newest run wins, no queue of stale pollers
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -24,26 +35,34 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch weather from Ecowitt
+      - name: Poll the station and publish, three passes
         env:
           ECOWITT_APPLICATION_KEY: ${{ secrets.ECOWITT_APPLICATION_KEY }}
           ECOWITT_API_KEY: ${{ secrets.ECOWITT_API_KEY }}
           ECOWITT_MAC: ${{ secrets.ECOWITT_MAC }}
-        run: python scripts/fetch_weather.py
-
-      - name: Fetch manual logs from the trial Sheet
-        env:
           SHEET_SUMMARY_URL: ${{ secrets.SHEET_SUMMARY_URL }}
-        run: python scripts/fetch_manual.py
-
-      - name: Commit if anything changed
         run: |
+          set +e
           git config user.name  "gilburn-park-bot"
           git config user.email "actions@users.noreply.github.com"
-          if git diff --quiet -- data/latest.json; then
-            echo "No change, nothing to commit."
-          else
-            git add data/latest.json
-            git commit -m "Weather update $(date -u '+%Y-%m-%d %H:%MZ')"
-            git push
-          fi
+
+          for pass in 1 2 3; do
+            echo "::group::pass $pass"
+
+            python scripts/fetch_weather.py || echo "weather fetch failed this pass"
+            python scripts/fetch_manual.py  || echo "manual fetch failed this pass"
+
+            if git diff --quiet -- data/latest.json; then
+              echo "No change to publish."
+            else
+              git add data/latest.json
+              git commit -q -m "Weather update $(date -u '+%Y-%m-%d %H:%MZ')"
+              # Rebase first, in case anything was pushed while this run slept.
+              git pull --rebase --autostash -q || git rebase --abort
+              git push -q || { sleep 15; git pull --rebase --autostash -q; git push -q || echo "push failed this pass"; }
+            fi
+
+            echo "::endgroup::"
+            if [ "$pass" -lt 3 ]; then sleep 290; fi
+          done
+          exit 0
