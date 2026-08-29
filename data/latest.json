@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-29T08:47:07+00:00",
+  "generated_utc": "2026-08-29T14:00:14+00:00",
   "manual": {
     "cleans": {
       "A": {
@@ -39,7 +39,7 @@
       "history": [],
       "last": null
     },
-    "generated_utc": "2026-08-29T08:47:09.620Z",
+    "generated_utc": "2026-08-29T14:00:16.660Z",
     "health": {
       "a_morbidities_total": 0,
       "a_mortalities_total": 0,
@@ -60,11 +60,11 @@
         "induction_date": null
       }
     },
-    "synced_local": "29 Aug 2026, 18:47 AEST",
-    "synced_utc": "2026-08-29T08:47:10+00:00"
+    "synced_local": "30 Aug 2026, 00:00 AEST",
+    "synced_utc": "2026-08-29T14:00:17+00:00"
   },
-  "reading_epoch": 1787993224,
-  "reading_local": "29 Aug 2026, 18:47 AEST",
+  "reading_epoch": 1788012004,
+  "reading_local": "30 Aug 2026, 00:00 AEST",
   "source": "Ecowitt WN1980C-WIFI7750 via Ecowitt API v3",
   "streams": {
     "cameras": "awaiting",
@@ -80,27 +80,27 @@
   "thi": {
     "label": "Normal",
     "level": "normal",
-    "value": 53.0
+    "value": 50.5
   },
   "units": "metric",
   "weather": {
-    "apparent_temp_c": 11.1,
-    "console_battery_v": 2.95,
-    "dew_point_c": 8.6,
-    "feels_like_c": 11.4,
-    "indoor_humidity_pct": 62.0,
-    "indoor_temp_c": 15.2,
-    "outdoor_humidity_pct": 83.0,
-    "outdoor_temp_c": 11.4,
-    "pressure_hpa": 1022.7,
+    "apparent_temp_c": 8.8,
+    "console_battery_v": 2.93,
+    "dew_point_c": 7.5,
+    "feels_like_c": 9.9,
+    "indoor_humidity_pct": 77.0,
+    "indoor_temp_c": 10.6,
+    "outdoor_humidity_pct": 85.0,
+    "outdoor_temp_c": 9.9,
+    "pressure_hpa": 1023.4,
     "rain_rate_mmhr": 0.0,
     "rain_today_mm": 0.0,
-    "rain_week_mm": 7.4,
+    "rain_week_mm": 0.0,
     "solar_wm2": null,
-    "vpd_kpa": 0.23,
-    "wind_direction_deg": 186,
-    "wind_direction_pt": "S",
-    "wind_gust_kmh": 0.0,
-    "wind_speed_kmh": 0.0
+    "vpd_kpa": 0.18,
+    "wind_direction_deg": 156,
+    "wind_direction_pt": "SSE",
+    "wind_gust_kmh": 3.5,
+    "wind_speed_kmh": 2.9
   }
 }
