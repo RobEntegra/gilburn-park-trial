@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-07T22:26:03+00:00",
+  "generated_utc": "2026-09-08T00:26:22+00:00",
   "manual": {
     "cleans": {
       "A": {
@@ -39,7 +39,7 @@
       "history": [],
       "last": null
     },
-    "generated_utc": "2026-09-07T22:26:05.403Z",
+    "generated_utc": "2026-09-08T00:26:24.457Z",
     "health": {
       "a_morbidities_total": 0,
       "a_mortalities_total": 0,
@@ -60,11 +60,11 @@
         "induction_date": null
       }
     },
-    "synced_local": "08 Sep 2026, 08:26 AEST",
-    "synced_utc": "2026-09-07T22:26:06+00:00"
+    "synced_local": "08 Sep 2026, 10:26 AEST",
+    "synced_utc": "2026-09-08T00:26:25+00:00"
   },
-  "reading_epoch": 1788819963,
-  "reading_local": "08 Sep 2026, 08:26 AEST",
+  "reading_epoch": 1788827170,
+  "reading_local": "08 Sep 2026, 10:26 AEST",
   "source": "Ecowitt WN1980C-WIFI7750 via Ecowitt API v3",
   "streams": {
     "cameras": "awaiting",
@@ -78,29 +78,29 @@
     "weight": "awaiting"
   },
   "thi": {
-    "label": "Unknown",
-    "level": "unknown",
-    "value": null
+    "label": "Normal",
+    "level": "normal",
+    "value": 57.3
   },
   "units": "metric",
   "weather": {
-    "apparent_temp_c": null,
-    "console_battery_v": null,
-    "dew_point_c": null,
-    "feels_like_c": null,
-    "indoor_humidity_pct": null,
-    "indoor_temp_c": null,
-    "outdoor_humidity_pct": null,
-    "outdoor_temp_c": null,
-    "pressure_hpa": null,
-    "rain_rate_mmhr": null,
-    "rain_today_mm": null,
-    "rain_week_mm": null,
+    "apparent_temp_c": 12.7,
+    "console_battery_v": 2.97,
+    "dew_point_c": 5.6,
+    "feels_like_c": 13.9,
+    "indoor_humidity_pct": 50.0,
+    "indoor_temp_c": 19.4,
+    "outdoor_humidity_pct": 57.0,
+    "outdoor_temp_c": 13.9,
+    "pressure_hpa": 1018.3,
+    "rain_rate_mmhr": 0.0,
+    "rain_today_mm": 0.0,
+    "rain_week_mm": 0.0,
     "solar_wm2": null,
-    "vpd_kpa": null,
-    "wind_direction_deg": null,
-    "wind_direction_pt": null,
-    "wind_gust_kmh": null,
-    "wind_speed_kmh": null
+    "vpd_kpa": 0.68,
+    "wind_direction_deg": 116,
+    "wind_direction_pt": "ESE",
+    "wind_gust_kmh": 7.2,
+    "wind_speed_kmh": 1.1
   }
 }
