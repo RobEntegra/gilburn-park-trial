@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-11T17:14:50+00:00",
+  "generated_utc": "2026-09-11T17:19:49+00:00",
   "manual": {
     "cleans": {
       "A": {
@@ -63,8 +63,8 @@
     "synced_local": "12 Sep 2026, 03:14 AEST",
     "synced_utc": "2026-09-11T17:14:56+00:00"
   },
-  "reading_epoch": 1789146868,
-  "reading_local": "12 Sep 2026, 03:14 AEST",
+  "reading_epoch": 1789147168,
+  "reading_local": "12 Sep 2026, 03:19 AEST",
   "source": "Ecowitt WN1980C-WIFI7750 via Ecowitt API v3",
   "streams": {
     "cameras": "awaiting",
@@ -80,19 +80,19 @@
   "thi": {
     "label": "Normal",
     "level": "normal",
-    "value": 45.4
+    "value": 45.6
   },
   "units": "metric",
   "weather": {
-    "apparent_temp_c": 6.3,
+    "apparent_temp_c": 6.4,
     "console_battery_v": 2.98,
-    "dew_point_c": 6.3,
-    "feels_like_c": 7.2,
+    "dew_point_c": 6.4,
+    "feels_like_c": 7.3,
     "indoor_humidity_pct": 66.0,
     "indoor_temp_c": 11.1,
     "outdoor_humidity_pct": 94.0,
-    "outdoor_temp_c": 7.2,
-    "pressure_hpa": 1019.3,
+    "outdoor_temp_c": 7.3,
+    "pressure_hpa": 1019.0,
     "rain_rate_mmhr": 0.0,
     "rain_today_mm": 0.0,
     "rain_week_mm": 0.0,
