@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-13T06:22:38+00:00",
+  "generated_utc": "2026-09-13T11:50:41+00:00",
   "manual": {
     "cleans": {
       "A": {
@@ -39,7 +39,7 @@
       "history": [],
       "last": null
     },
-    "generated_utc": "2026-09-13T06:22:40.346Z",
+    "generated_utc": "2026-09-13T11:50:42.756Z",
     "health": {
       "a_morbidities_total": 0,
       "a_mortalities_total": 0,
@@ -60,11 +60,11 @@
         "induction_date": null
       }
     },
-    "synced_local": "13 Sep 2026, 16:22 AEST",
-    "synced_utc": "2026-09-13T06:22:40+00:00"
+    "synced_local": "13 Sep 2026, 21:50 AEST",
+    "synced_utc": "2026-09-13T11:50:43+00:00"
   },
-  "reading_epoch": 1789280507,
-  "reading_local": "13 Sep 2026, 16:21 AEST",
+  "reading_epoch": 1789300187,
+  "reading_local": "13 Sep 2026, 21:49 AEST",
   "source": "Ecowitt WN1980C-WIFI7750 via Ecowitt API v3",
   "streams": {
     "cameras": "awaiting",
@@ -80,27 +80,27 @@
   "thi": {
     "label": "Normal",
     "level": "normal",
-    "value": 70.5
+    "value": 60.3
   },
   "units": "metric",
   "weather": {
-    "apparent_temp_c": 24.0,
-    "console_battery_v": 2.95,
-    "dew_point_c": 11.7,
-    "feels_like_c": 24.4,
-    "indoor_humidity_pct": 43.0,
-    "indoor_temp_c": 28.2,
-    "outdoor_humidity_pct": 45.0,
-    "outdoor_temp_c": 24.4,
-    "pressure_hpa": 1006.8,
-    "rain_rate_mmhr": 0.0,
-    "rain_today_mm": 0.0,
-    "rain_week_mm": 0.0,
+    "apparent_temp_c": 16.8,
+    "console_battery_v": 2.99,
+    "dew_point_c": 14.3,
+    "feels_like_c": 15.8,
+    "indoor_humidity_pct": 74.0,
+    "indoor_temp_c": 18.0,
+    "outdoor_humidity_pct": 91.0,
+    "outdoor_temp_c": 15.8,
+    "pressure_hpa": 1010.2,
+    "rain_rate_mmhr": 6.6,
+    "rain_today_mm": 6.9,
+    "rain_week_mm": 6.9,
     "solar_wm2": null,
-    "vpd_kpa": 1.68,
-    "wind_direction_deg": 18,
-    "wind_direction_pt": "NNE",
-    "wind_gust_kmh": 7.2,
-    "wind_speed_kmh": 4.7
+    "vpd_kpa": 0.16,
+    "wind_direction_deg": 348,
+    "wind_direction_pt": "NNW",
+    "wind_gust_kmh": 3.5,
+    "wind_speed_kmh": 2.1
   }
 }
