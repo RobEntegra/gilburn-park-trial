@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-14T23:29:26+00:00",
+  "generated_utc": "2026-09-14T23:34:21+00:00",
   "manual": {
     "cleans": {
       "A": {
@@ -39,7 +39,7 @@
       "history": [],
       "last": null
     },
-    "generated_utc": "2026-09-14T23:29:28.069Z",
+    "generated_utc": "2026-09-14T23:34:22.768Z",
     "health": {
       "a_morbidities_total": 0,
       "a_mortalities_total": 0,
@@ -60,8 +60,8 @@
         "induction_date": null
       }
     },
-    "synced_local": "15 Sep 2026, 09:29 AEST",
-    "synced_utc": "2026-09-14T23:29:28+00:00"
+    "synced_local": "15 Sep 2026, 09:34 AEST",
+    "synced_utc": "2026-09-14T23:34:23+00:00"
   },
   "reading_epoch": 1789428425,
   "reading_local": "15 Sep 2026, 09:27 AEST",
