@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-23T10:41:11+00:00",
+  "generated_utc": "2026-10-23T15:23:01+00:00",
   "manual": {
     "cleans": {
       "A": {
@@ -63,8 +63,8 @@
     "synced_local": "23 Oct 2026, 20:41 AEST",
     "synced_utc": "2026-10-23T10:41:13+00:00"
   },
-  "reading_epoch": 1792752071,
-  "reading_local": "23 Oct 2026, 20:41 AEST",
+  "reading_epoch": 1792768981,
+  "reading_local": "24 Oct 2026, 01:23 AEST",
   "source": "Ecowitt WN1980C-WIFI7750 via Ecowitt API v3",
   "streams": {
     "cameras": "awaiting",
