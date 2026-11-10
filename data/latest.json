@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-10T18:22:04+00:00",
+  "generated_utc": "2026-11-10T18:26:59+00:00",
   "manual": {
     "cleans": {
       "A": {
@@ -39,7 +39,7 @@
       "history": [],
       "last": null
     },
-    "generated_utc": "2026-11-10T18:22:06.382Z",
+    "generated_utc": "2026-11-10T18:27:00.966Z",
     "health": {
       "a_morbidities_total": 0,
       "a_mortalities_total": 0,
@@ -60,11 +60,11 @@
         "induction_date": null
       }
     },
-    "synced_local": "11 Nov 2026, 04:22 AEST",
-    "synced_utc": "2026-11-10T18:22:06+00:00"
+    "synced_local": "11 Nov 2026, 04:27 AEST",
+    "synced_utc": "2026-11-10T18:27:01+00:00"
   },
-  "reading_epoch": 1794334924,
-  "reading_local": "11 Nov 2026, 04:22 AEST",
+  "reading_epoch": 1794335219,
+  "reading_local": "11 Nov 2026, 04:26 AEST",
   "source": "Ecowitt WN1980C-WIFI7750 via Ecowitt API v3",
   "streams": {
     "cameras": "awaiting",
