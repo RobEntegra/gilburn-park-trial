@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-27T04:05:30+00:00",
+  "generated_utc": "2026-11-27T13:28:37+00:00",
   "manual": {
     "cleans": {
       "A": {
@@ -39,7 +39,7 @@
       "history": [],
       "last": null
     },
-    "generated_utc": "2026-11-27T04:05:32.254Z",
+    "generated_utc": "2026-11-27T13:28:39.800Z",
     "health": {
       "a_morbidities_total": 0,
       "a_mortalities_total": 0,
@@ -60,11 +60,11 @@
         "induction_date": null
       }
     },
-    "synced_local": "27 Nov 2026, 14:05 AEST",
-    "synced_utc": "2026-11-27T04:05:32+00:00"
+    "synced_local": "27 Nov 2026, 23:28 AEST",
+    "synced_utc": "2026-11-27T13:28:40+00:00"
   },
-  "reading_epoch": 1795752278,
-  "reading_local": "27 Nov 2026, 14:04 AEST",
+  "reading_epoch": 1795786058,
+  "reading_local": "27 Nov 2026, 23:27 AEST",
   "source": "Ecowitt WN1980C-WIFI7750 via Ecowitt API v3",
   "streams": {
     "cameras": "awaiting",
@@ -78,29 +78,29 @@
     "weight": "awaiting"
   },
   "thi": {
-    "label": "Alert",
-    "level": "alert",
-    "value": 75.1
+    "label": "Normal",
+    "level": "normal",
+    "value": 67.8
   },
   "units": "metric",
   "weather": {
-    "apparent_temp_c": 27.8,
-    "console_battery_v": 3.0,
-    "dew_point_c": 19.9,
-    "feels_like_c": 25.8,
-    "indoor_humidity_pct": 55.0,
-    "indoor_temp_c": 31.2,
-    "outdoor_humidity_pct": 70.0,
-    "outdoor_temp_c": 25.8,
-    "pressure_hpa": 1004.4,
+    "apparent_temp_c": 23.3,
+    "console_battery_v": 2.98,
+    "dew_point_c": 19.3,
+    "feels_like_c": 20.0,
+    "indoor_humidity_pct": 76.0,
+    "indoor_temp_c": 22.6,
+    "outdoor_humidity_pct": 96.0,
+    "outdoor_temp_c": 20.0,
+    "pressure_hpa": 1000.7,
     "rain_rate_mmhr": 0.0,
-    "rain_today_mm": 6.1,
-    "rain_week_mm": 6.9,
+    "rain_today_mm": 0.0,
+    "rain_week_mm": 45.5,
     "solar_wm2": null,
-    "vpd_kpa": 1.0,
-    "wind_direction_deg": 130,
-    "wind_direction_pt": "SE",
-    "wind_gust_kmh": 13.0,
-    "wind_speed_kmh": 8.7
+    "vpd_kpa": 0.09,
+    "wind_direction_deg": 72,
+    "wind_direction_pt": "ENE",
+    "wind_gust_kmh": 0.0,
+    "wind_speed_kmh": 0.3
   }
 }
